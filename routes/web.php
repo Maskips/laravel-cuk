@@ -11,9 +11,9 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 
 
@@ -49,17 +49,60 @@
 //     return $psn;
 // });
 
-
-Route::get('/test_tni', function() {
-    return 'Selamat Datang Di Acara Test TNI <br>'
-    .'Terima Kasih';
+//MENCARI SEMUA MODEL
+Route::get('/testmodel', function() {
+    $query = App\Post::all();
+    return $query;
 });
 
-Route::get('test_tni/{nama?}/{bb?}/{umur?}', function ($a = null , $b = null , $c = null) {
-    $psn = "Silahkan Daftar kan Diri Terlebih Dahulu";
-    if (isset($a)) {
-        $psn = '<b>Nama</b> : ' .$a;
-    }
+//MENCARI MODEL BERDASARKAN ID
+Route::get('/testmodel_id', function() {
+    $query = App\Post::find(1);
+    return $query;
+});
+
+//MENCARI MODEL BERDASARKAN TITLE
+Route::get('/testmodel_title', function() {
+    $query = App\Post::where('title','like','%cepat nikah%')->get();
+    return $query;
+});
+
+//MENGUBAH RECORD (HAPUS SEMUA ISI FUNCTION)
+Route::get('/testmodel_ubah', function() {
+    $post = App\Post::find(1);
+    $post->title = "Ciri Keluarga Sakinah Mawadah Warohmah";
+    $post->save();
+    return $post;
+});
+
+//MENGHAPUS RECORD (HAPUS SEMUA ISI FUNCTION)
+Route::get('/testmodel_hapus', function() {
+    $post = App\Post::find(1);
+    $post->delete();
+    return $post;
+});
+
+//MENAMBAH RECORD (HAPUS SEMUA ISI FUNCTION
+Route::get('/testmodel_tambah', function() {
+    $post = new App\Post;
+    $post->title = "7 Amalan Pembuka Jodoh";
+    $post->content = "shalat malam, sedekah, puasa sunah, silahturahmi, senyum, doa, tobat,";
+    $post->save();
+    return $post;
+});
+
+
+
+// Route::get('/test_tni', function() {
+//     return 'Selamat Datang Di Acara Test TNI <br>'
+//     .'Terima Kasih';
+// });
+
+// Route::get('test_tni/{nama?}/{bb?}/{umur?}', function ($a = null , $b = null , $c = null) {
+//     $psn = "Silahkan Daftar kan Diri Terlebih Dahulu";
+//     if (isset($a)) {
+//         $psn = '<b>Nama</b> : ' .$a;
+//     }
     // if (isset($b)) {
     //     $psn = '<b>Berat Badan</b> : ' .$b;
     // }
@@ -67,30 +110,30 @@ Route::get('test_tni/{nama?}/{bb?}/{umur?}', function ($a = null , $b = null , $
     //     $psn = '<b>Umur</b> : ' .$c;
     // }
 
-    $ps = '<br><b>Berat Badan</b> : ';
-    if ($b < 50) {
-        $psn .= $ps . $b . " (Anda kurang nutrisi)" ;
-    }
-    else if ($b >= 76 || $b >= 100) {
-        $psn .= $ps . $b . " (Anda harus turun berat badan)" ;
-    }
-    else if ($b >= 66 || $b >= 75) {
-        $psn .= $ps . $b . " (Berat badan anda ideal)" ;
-    }
-    else if ($b >= 50 || $b >= 64) {
-        $psn .= $ps . $b . " (Naikan berat badan anda) <br>" ;
-    }
+//     $ps = '<br><b>Berat Badan</b> : ';
+//     if ($b < 50) {
+//         $psn .= $ps . $b . " (Anda kurang nutrisi)" ;
+//     }
+//     else if ($b >= 76 || $b >= 100) {
+//         $psn .= $ps . $b . " (Anda harus turun berat badan)" ;
+//     }
+//     else if ($b >= 66 || $b >= 75) {
+//         $psn .= $ps . $b . " (Berat badan anda ideal)" ;
+//     }
+//     else if ($b >= 50 || $b >= 64) {
+//         $psn .= $ps . $b . " (Naikan berat badan anda) <br>" ;
+//     }
 
-    $psi = '<br><b>Umur</b> : ';
-    if ($c >= 30 && $c <= 40) {
-        $psn .= $psi . $c . " (Perwira)" ;
-    }
-    else if ($c >= 40 && $c <= 50) {
-        $psn .= $psi . $c . " (Laksamana)" ;
-    }
-    else if ($c >= 50 && $c <= 60) {
-        $psn .= $psi . $c . " (Jendral)" ;
-    }
+//     $psi = '<br><b>Umur</b> : ';
+//     if ($c >= 30 && $c <= 40) {
+//         $psn .= $psi . $c . " (Perwira)" ;
+//     }
+//     else if ($c >= 40 && $c <= 50) {
+//         $psn .= $psi . $c . " (Laksamana)" ;
+//     }
+//     else if ($c >= 50 && $c <= 60) {
+//         $psn .= $psi . $c . " (Jendral)" ;
+//     }
 
-    return $psn;
-});
+//     return $psn;
+// });
