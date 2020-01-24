@@ -50,46 +50,46 @@ Route::get('/', function () {
 // });
 
 //MENCARI SEMUA MODEL
-Route::get('/testmodel', function() {
-    $query = App\Post::all();
-    return $query;
-});
+// Route::get('/testmodel', function() {
+//     $query = App\Post::all();
+//     return $query;
+// });
 
 //MENCARI MODEL BERDASARKAN ID
-Route::get('/testmodel_id', function() {
-    $query = App\Post::find(1);
-    return $query;
-});
+// Route::get('/testmodel_id', function() {
+//     $query = App\Post::find(1);
+//     return $query;
+// });
 
 //MENCARI MODEL BERDASARKAN TITLE
-Route::get('/testmodel_title', function() {
-    $query = App\Post::where('title','like','%cepat nikah%')->get();
-    return $query;
-});
+// Route::get('/testmodel_title', function() {
+//     $query = App\Post::where('title','like','%cepat nikah%')->get();
+//     return $query;
+// });
 
 //MENGUBAH RECORD (HAPUS SEMUA ISI FUNCTION)
-Route::get('/testmodel_ubah', function() {
-    $post = App\Post::find(1);
-    $post->title = "Ciri Keluarga Sakinah Mawadah Warohmah";
-    $post->save();
-    return $post;
-});
+// Route::get('/testmodel_ubah', function() {
+//     $post = App\Post::find(1);
+//     $post->title = "Ciri Keluarga Sakinah Mawadah Warohmah";
+//     $post->save();
+//     return $post;
+// });
 
 //MENGHAPUS RECORD (HAPUS SEMUA ISI FUNCTION)
-Route::get('/testmodel_hapus', function() {
-    $post = App\Post::find(1);
-    $post->delete();
-    return $post;
-});
+// Route::get('/testmodel_hapus', function() {
+//     $post = App\Post::find(1);
+//     $post->delete();
+//     return $post;
+// });
 
 //MENAMBAH RECORD (HAPUS SEMUA ISI FUNCTION
-Route::get('/testmodel_tambah', function() {
-    $post = new App\Post;
-    $post->title = "7 Amalan Pembuka Jodoh";
-    $post->content = "shalat malam, sedekah, puasa sunah, silahturahmi, senyum, doa, tobat,";
-    $post->save();
-    return $post;
-});
+// Route::get('/testmodel_tambah', function() {
+//     $post = new App\Post;
+//     $post->title = "7 Amalan Pembuka Jodoh";
+//     $post->content = "shalat malam, sedekah, puasa sunah, silahturahmi, senyum, doa, tobat,";
+//     $post->save();
+//     return $post;
+// });
 
 
 
@@ -118,7 +118,8 @@ Route::get('/testmodel_tambah', function() {
 //         $psn .= $ps . $b . " (Anda harus turun berat badan)" ;
 //     }
 //     else if ($b >= 66 || $b >= 75) {
-//         $psn .= $ps . $b . " (Berat badan anda ideal)" ;
+//         $psn .= $ps . $b . " (Berat badan anda ideal)" ;Route::get('tugaslaravel', function() {
+
 //     }
 //     else if ($b >= 50 || $b >= 64) {
 //         $psn .= $ps . $b . " (Naikan berat badan anda) <br>" ;
@@ -137,3 +138,32 @@ Route::get('/testmodel_tambah', function() {
 
 //     return $psn;
 // });
+
+
+
+//TUGAS LARAVEL JUMAT BERKAH
+Route::get('tugaslaravel/select', function() {
+    $query = App\TabelTugas::select('sekolah', 'alamat', 'hobi')->first();
+    return $query;
+});
+
+
+Route::get('tugaslaravel/ambil', function() {
+    $query = App\TabelTugas::all()->take(3);
+    return $query;
+});
+
+
+Route::get('tugaslaravel/tambah/{nama}/{sekolah}/{jenis_kelamin}/{alamat}/{tgl_lahir}/{umur}/{hobi}',
+    function($nama, $sekolah, $jenis_kelamin, $alamat, $tgl_lahir, $umur, $hobi) {
+    $query = new App\TabelTugas;
+    $query->nama          = $nama;
+    $query->sekolah       = $sekolah;
+    $query->Jenis_kelamin = $jenis_kelamin;
+    $query->alamat        = $alamat;
+    $query->tgl_lahir     = $tgl_lahir;
+    $query->umur          = $umur;
+    $query->hobi          = $hobi;
+    $query->save();
+    return $query;
+});
