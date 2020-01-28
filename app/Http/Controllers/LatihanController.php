@@ -80,15 +80,18 @@ class LatihanController extends Controller
         }
     }
 
-
+//TUGAS CONTROLLER JABATAN
     public function tugas() {
         $data = [
             ['Nama'=>'Raflisaputraa', 'Agama'=>'Islam', 'Alamat'=>'Kopo', 'JK'=>'Laki', 'Jabatan'=>'Manager',
             'Jam Kerja'=>2],
         ];
         foreach ($data as $val => $key) {
-            if ($key['Jabatan'] => Manager) {
-                $manager = $key['Manager'];
+            if ($data1('Jabatan') == 'Manager') {
+                $jabat = $data1['Jabatan'];
+            }
+            else if ($data2('Jabatan') == 'Sekretaris') {
+                $jabat = $data2['Jabatan'];
             }
         }
     }
