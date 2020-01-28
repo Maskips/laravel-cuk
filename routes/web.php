@@ -147,13 +147,13 @@ Route::get('tugaslaravel/select', function() {
     return $query;
 });
 
-
+//ROUTE MENGAMBIL 3 FIELD
 Route::get('tugaslaravel/ambil', function() {
     $query = App\TabelTugas::all()->take(3);
     return $query;
 });
 
-
+//ROUTE MENGAMBIL
 Route::get('tugaslaravel/tambah/{nama}/{sekolah}/{jenis_kelamin}/{alamat}/{tgl_lahir}/{umur}/{hobi}',
     function($nama, $sekolah, $jenis_kelamin, $alamat, $tgl_lahir, $umur, $hobi) {
     $query = new App\TabelTugas;
@@ -167,3 +167,12 @@ Route::get('tugaslaravel/tambah/{nama}/{sekolah}/{jenis_kelamin}/{alamat}/{tgl_l
     $query->save();
     return $query;
 });
+
+//ROUTE CONTROLLER
+Route::get('latihan1/{a?}/{b?}/{c?}', 'LatihanController@halo1');
+// Route::get('latihan2', 'LatihanController@halo2');
+// Route::get('latihan3', 'LatihanController@halo3');
+// Route::get('latihan4', 'LatihanController@halo4');
+
+//ROUTE CONTROLLER ARRAY
+Route::get('data1', 'LatihanController@loop');
