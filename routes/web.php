@@ -176,3 +176,11 @@ Route::get('latihan1/{a?}/{b?}/{c?}', 'LatihanController@halo1');
 
 //ROUTE CONTROLLER ARRAY
 Route::get('data1', 'LatihanController@loop');
+Route::get('tugas', 'LatihanController@tugas');
+
+// CRUD TABUNGAN
+Route::get('tabungan', 'TabunganController@index');
+Route::get('tabungan-show/{id}', 'TabunganController@show');
+Route::get('tabungan-tambah/{nis}/{nama}/{kelas}/{jml}', 'TabunganController@store');
+Route::get('tabungan-edit/{nis}/{nama}/{kelas}/{jml}', 'TabunganController@edit');
+Route::get('tabungan-delete/{id}', 'TabunganController@delete');

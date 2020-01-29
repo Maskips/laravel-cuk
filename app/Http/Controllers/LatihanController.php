@@ -83,16 +83,33 @@ class LatihanController extends Controller
 //TUGAS CONTROLLER JABATAN
     public function tugas() {
         $data = [
-            ['Nama'=>'Raflisaputraa', 'Agama'=>'Islam', 'Alamat'=>'Kopo', 'JK'=>'Laki', 'Jabatan'=>'Manager',
-            'Jam Kerja'=>2],
+            ['Nama'=>'Raflisaputraa', 'Agama'=>'Islam', 'Alamat'=>'Kopo', 'JK'=>'Laki', 'Jabatan'=>'Manager', 'Jam Kerja'=>280],
+            ['Nama'=>'Kiplii', 'Agama'=>'Islam', 'Alamat'=>'Cibaduyut', 'JK'=>'Laki', 'Jabatan'=>'Sekretaris', 'Jam Kerja'=>300],
+            ['Nama'=>'Badud', 'Agama'=>'Islam', 'Alamat'=>'Sadang', 'JK'=>'Laki', 'Jabatan'=>'Staf', 'Jam Kerja'=>100],
         ];
         foreach ($data as $val => $key) {
-            if ($data1('Jabatan') == 'Manager') {
-                $jabat = $data1['Jabatan'];
+            if ($key['Jabatan'] == 'Manager') {
+                $jabat = 500000;
             }
-            else if ($data2('Jabatan') == 'Sekretaris') {
-                $jabat = $data2['Jabatan'];
+            else if ($key['Jabatan'] == 'Sekretaris') {
+                $jabat = 350000;
             }
+            else if ($key['Jabatan'] == 'Staf') {
+                $jabat = 250000;
+            }
+            $bonus = 0;
+            $pp = 0.025 * $jabat;
+            $bon = ($jabat * $bonus) - $pp;
+            echo "Nama : " .$key['Nama'].
+             "<br> Agama : " .$key['Agama'].
+             "<br> Alamat : " .$key['Alamat'].
+             "<br> JK : " .$key['JK'].
+             "<br> Jabatan : " .$key['Jabatan'].
+             "<br> Jam Kerja : " .$key['Jam Kerja'].
+             "<br> Gaji : " .$jabat;
+             "<br> PP : " .$pp;
+             "<br> Bonus : " .$bonus;
+            echo "<hr>";
         }
     }
 
