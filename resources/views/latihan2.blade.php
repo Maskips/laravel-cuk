@@ -7,9 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    @foreach ($data as $$val)
-       NAMA : {['$value'->nama]} <br>
-       KELAS : {['$value'->kelas]}
+    @foreach ($tabungan as $data)
+       NAMA : {[$data->nama]} <br>
+       N I S : {[$data->nis]}
        <hr>
     @endforeach
 </body>

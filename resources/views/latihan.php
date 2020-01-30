@@ -7,10 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    @foreach ($data as $$val)
-       NAMA : {['$value'->nama]} <br>
-       KELAS : {['$value'->kelas]}
-       <hr>
-    @endforeach
+    HALLO NAMA SAYA <?php echo $data; ?>
 </body>
 </html>

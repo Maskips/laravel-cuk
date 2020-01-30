@@ -184,3 +184,8 @@ Route::get('tabungan-show/{id}', 'TabunganController@show');
 Route::get('tabungan-tambah/{nis}/{nama}/{kelas}/{jml}', 'TabunganController@store');
 Route::get('tabungan-edit/{nis}/{nama}/{kelas}/{jml}', 'TabunganController@edit');
 Route::get('tabungan-delete/{id}', 'TabunganController@delete');
+
+// ROUTE PASSING
+Route::get('pass', 'PassingController@pass');
+Route::get('pass1', 'PassingController@pass1');
+Route::get('passtabungan', 'PassingController@pass2');
