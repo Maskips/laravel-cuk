@@ -110,31 +110,31 @@ Route::get('/', function () {
     //     $psn = '<b>Umur</b> : ' .$c;
     // }
 
-//     $ps = '<br><b>Berat Badan</b> : ';
-//     if ($b < 50) {
-//         $psn .= $ps . $b . " (Anda kurang nutrisi)" ;
-//     }
-//     else if ($b >= 76 || $b >= 100) {
-//         $psn .= $ps . $b . " (Anda harus turun berat badan)" ;
-//     }
-//     else if ($b >= 66 || $b >= 75) {
-//         $psn .= $ps . $b . " (Berat badan anda ideal)" ;Route::get('tugaslaravel', function() {
+    // $ps = '<br><b>Berat Badan</b> : ';
+    // if ($b < 50) {
+    //     $psn .= $ps . $b . " (Anda kurang nutrisi)" ;
+    // }
+    // else if ($b >= 76 || $b >= 100) {
+    //     $psn .= $ps . $b . " (Anda harus turun berat badan)" ;
+    // }
+    // else if ($b >= 66 || $b >= 75) {
+    //     $psn .= $ps . $b . " (Berat badan anda ideal)" ;Route::get('tugaslaravel', function() {
 
-//     }
-//     else if ($b >= 50 || $b >= 64) {
-//         $psn .= $ps . $b . " (Naikan berat badan anda) <br>" ;
-//     }
+    // }
+    // else if ($b >= 50 || $b >= 64) {
+    //     $psn .= $ps . $b . " (Naikan berat badan anda) <br>" ;
+    // }
 
-//     $psi = '<br><b>Umur</b> : ';
-//     if ($c >= 30 && $c <= 40) {
-//         $psn .= $psi . $c . " (Perwira)" ;
-//     }
-//     else if ($c >= 40 && $c <= 50) {
-//         $psn .= $psi . $c . " (Laksamana)" ;
-//     }
-//     else if ($c >= 50 && $c <= 60) {
-//         $psn .= $psi . $c . " (Jendral)" ;
-//     }
+    // $psi = '<br><b>Umur</b> : ';
+    // if ($c >= 30 && $c <= 40) {
+    //     $psn .= $psi . $c . " (Perwira)" ;
+    // }
+    // else if ($c >= 40 && $c <= 50) {
+    //     $psn .= $psi . $c . " (Laksamana)" ;
+    // }
+    // else if ($c >= 50 && $c <= 60) {
+    //     $psn .= $psi . $c . " (Jendral)" ;
+    // }
 
 //     return $psn;
 // });
@@ -188,4 +188,12 @@ Route::get('tabungan-delete/{id}', 'TabunganController@delete');
 // ROUTE PASSING
 Route::get('pass', 'PassingController@pass');
 Route::get('pass1', 'PassingController@pass1');
-Route::get('passtabungan', 'PassingController@pass2');
+Route::get('pass2', 'PassingController@pass2');
+Route::get('pass3', 'PassingController@pass3');
+
+
+
+
+
+Route::get('index', 'PassingController@index');
+Route::get('index2', 'PassingController@index2');

@@ -12,10 +12,11 @@ class DatabaseSeeder extends Seeder
     public function run()
      {
         // $this->call(PostsTableSeeder::class);
-        // // $this->call(SiswaSeeder::class);
-        // $this->call(TugasLaravelSeeder::class);
-        factory(App\Tabungan::class, 100) ->create();
-        factory(App\Costumer::class, 1000) ->create();
+        $this->call(PemainBolaSeeder::class);
+        // // $this->call(TugasLaravelSeeder::class);
+        // factory(App\Tabungan::class, 100) ->create();
+        // factory(App\Costumer::class, 1000) ->create();
+        // factory(App\PemainBola::class, 10) ->create();
     }
 
 }

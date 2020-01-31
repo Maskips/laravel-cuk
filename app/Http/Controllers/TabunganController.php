@@ -45,5 +45,6 @@ class TabunganController extends Controller
         $tabungan = \App\Tabungan::find($id);
         $tabungan->delete();
         return $tabungan;
+Route::get('tgsnabung', 'PassingController@labung');
     }
 }

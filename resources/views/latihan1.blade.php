@@ -8,8 +8,8 @@
 </head>
 <body>
     @foreach ($data as $$val)
-       NAMA : {['$value'->nama]} <br>
-       KELAS : {['$value'->kelas]}
+       NAMA : {['$val'->nama]} <br>
+       KELAS : {['$val'->kelas]}
        <hr>
     @endforeach
 </body>

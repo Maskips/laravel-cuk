@@ -16,10 +16,15 @@ class PassingController extends Controller
             'nama'=>'Kismin', 'kelas'=>'XI RPL 1',
             'nama'=>'Kosmon', 'kelas'=>'XI RPL 2',
         ];
-        return view("latihan", ('data'->$siswa));
+        return view("latihan1", ('data'->$siswa));
     }
-    public function pass2() {
-        $tabungan = \App\Tabungan::all()->take(10);
-        return view("latihan2", compact('tabungan'));
+    public function pass3($id) {
+        $tabungan = \App\Tabungan::findOrFail($id);
+        return view("latihan3", compact('$tabungan'));
     }
+    public function pass2($id) {
+        $tabungan = \App\Tabungan::findOrFail($id);
+        return view("latihan3", compact('$tabungan'));
+    }
+
 }
